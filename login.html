@@ -44,7 +44,7 @@
     <div class="login-box">
         <img src="image/avatar.png" class="avatar" alt="Avatar">
         <h1>Login For TravelEase</h1>
-        <form id="loginForm">
+        <form id="loginForm" method="post" action="login.php">
             <p>Username</p>
             <input type="text" id="username" name="user_name" placeholder="Enter Username" required>
             <div id="usernameError" class="error-message"></div>
@@ -65,8 +65,6 @@
     <script>
         // Form validation using JavaScript
         document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent default form submission
-
             // Clear previous error messages
             document.getElementById("usernameError").textContent = "";
             document.getElementById("passwordError").textContent = "";
@@ -86,12 +84,9 @@
                 isValid = false;
             }
 
-            // If form is valid, proceed with submission (dummy action for demonstration)
-            if (isValid) {
-                // Example action: redirect to viewBus.html
-                window.location.href = "viewBus.html";
-                // In a real scenario, you would perform AJAX call to validate credentials on server
-                // and handle response accordingly (successful login or error messages).
+            // Prevent form submission if there are errors
+            if (!isValid) {
+                event.preventDefault(); // Stop form submission
             }
         });
     </script>
