@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sign Up Success</title>
+  <title>Sign Up Success - TravelEase Bus and Ticket Booking</title>
+  <link rel="stylesheet" href="cssfile/signupsuccess.css">
+  <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -15,21 +18,25 @@
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
+      max-width: 400px;
       margin: 0 auto;
     }
-    h1 {
+    h2 {
       color: #4CAF50;
     }
     p {
       font-size: 18px;
     }
-    a {
-      text-decoration: none;
-      color: #F9522E;
-      font-weight: bold;
+    .footer {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #888;
     }
-    a:hover {
+    .footer a {
+      color: #F9522E;
+      text-decoration: none;
+    }
+    .footer a:hover {
       text-decoration: underline;
     }
   </style>
@@ -37,10 +44,16 @@
 <body>
 
   <div class="container">
-    <h1>Sign Up Successful!</h1>
+    <h2>Sign Up Successful!</h2>
     <p>Thank you for signing up with TravelEase Bus and Ticket Booking.</p>
-    <p>You can now <a href="index.html">log in</a> to your account.</p>
+    <p>You will now be redirected to the login page...</p>
   </div>
+
+  <script>
+    setTimeout(function() {
+      window.location.href = "login.html"; // Redirect to login page after 3 seconds
+    }, 3000); // Adjust the delay (in milliseconds) as needed
+  </script>
 
 </body>
 </html>
