@@ -44,13 +44,11 @@
     <div class="login-box">
         <img src="image/avatar.png" class="avatar" alt="Avatar">
         <h1>Login For TravelEase</h1>
-        <form id="loginForm" method="post" action="login.php">
+        <form method="post" action="login.php">
             <p>Username</p>
-            <input type="text" id="username" name="user_name" placeholder="Enter Username" required>
-            <div id="usernameError" class="error-message"></div>
+            <input type="text" name="user_name" placeholder="Enter Username" required>
             <p>Password</p>
-            <input type="password" id="password" name="password" placeholder="Enter Password" required>
-            <div id="passwordError" class="error-message"></div>
+            <input type="password" name="password" placeholder="Enter Password" required>
             <input type="submit" name="login" value="Login">
             <a href="signUp.html" class="sign_up">Sign Up</a>&nbsp&nbsp&nbsp
             <a href="#">Forgot Password</a>
@@ -61,34 +59,5 @@
     <footer>
         <!-- Your footer content here, if included in footer_l.css -->
     </footer>
-
-    <script>
-        // Form validation using JavaScript
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            // Clear previous error messages
-            document.getElementById("usernameError").textContent = "";
-            document.getElementById("passwordError").textContent = "";
-
-            // Fetch form values
-            var username = document.getElementById("username").value.trim();
-            var password = document.getElementById("password").value.trim();
-
-            // Basic validation
-            var isValid = true;
-            if (username === "") {
-                document.getElementById("usernameError").textContent = "Please enter your username";
-                isValid = false;
-            }
-            if (password === "") {
-                document.getElementById("passwordError").textContent = "Please enter your password";
-                isValid = false;
-            }
-
-            // Prevent form submission if there are errors
-            if (!isValid) {
-                event.preventDefault(); // Stop form submission
-            }
-        });
-    </script>
 </body>
 </html>
